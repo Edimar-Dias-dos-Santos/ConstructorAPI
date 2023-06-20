@@ -18,7 +18,18 @@ public class Usuario  implements Serializable {
     @GeneratedValue(strategy=GenerationType.AUTO)
     private UUID idUsuario;
     private String nome;
-    private String eMail;
+    private String email;
+    private String telefone;
+
+    public String getTelefone() {
+        return this.telefone;
+    }
+
+    public void setTelefone(String telefone) {
+
+        this.telefone = telefone;
+    }
+
     private boolean permissao;
 
 
@@ -31,7 +42,7 @@ public class Usuario  implements Serializable {
     }
 
     public String geteMail() {
-        return this.eMail;
+        return this.email;
     }
 
     public boolean isPermissao() {
@@ -46,8 +57,8 @@ public class Usuario  implements Serializable {
         this.nome = nome;
     }
 
-    public void seteMail(String eMail) {
-        this.eMail = eMail;
+    public void seteMail(String email) {
+        this.email = email;
     }
 
     public void setPermissao(boolean permissao) {
