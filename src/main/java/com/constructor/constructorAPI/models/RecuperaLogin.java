@@ -1,6 +1,8 @@
 package com.constructor.constructorAPI.models;
+
 import jakarta.persistence.*;
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.UUID;
 
 @Entity
@@ -11,9 +13,8 @@ public class RecuperaLogin implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID idRecuperaLogin;
-    private UUID idUsuario;
     private String cpf;
-    private String dataNascimento;
+    private LocalDate dataNascimento;
     private String ultimoNome;
 
     @ManyToOne
@@ -24,15 +25,11 @@ public class RecuperaLogin implements Serializable {
         return this.idRecuperaLogin;
     }
 
-    public UUID getIdUsuario() {
-        return this.idUsuario;
-    }
-
     public String getCpf() {
         return this.cpf;
     }
 
-    public String getDataNascimento() {
+    public LocalDate getDataNascimento() {
         return this.dataNascimento;
     }
 
@@ -44,15 +41,11 @@ public class RecuperaLogin implements Serializable {
         this.idRecuperaLogin = idRecuperaLogin;
     }
 
-    public void setIdUsuario(UUID idUsuario) {
-        this.idUsuario = idUsuario;
-    }
-
     public void setCpf(String cpf) {
         this.cpf = cpf;
     }
 
-    public void setDataNascimento(String dataNascimento) {
+    public void setDataNascimento(LocalDate dataNascimento) {
         this.dataNascimento = dataNascimento;
     }
 

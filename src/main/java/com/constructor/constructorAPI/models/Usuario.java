@@ -11,7 +11,7 @@ import java.io.Serializable;
 
 @Entity
 @Table(name = "TB_USUARIO")
-public class Usuario  implements Serializable {
+public class Usuario implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
@@ -20,45 +20,42 @@ public class Usuario  implements Serializable {
     private String nome;
     private String email;
     private String telefone;
-
-    public String getTelefone() {
-        return this.telefone;
-    }
-
-    public void setTelefone(String telefone) {
-
-        this.telefone = telefone;
-    }
-
     private boolean permissao;
 
-
     public UUID getIdUsuario() {
-        return this.idUsuario;
-    }
-
-    public String getNome() {
-        return this.nome;
-    }
-
-    public String geteMail() {
-        return this.email;
-    }
-
-    public boolean isPermissao() {
-        return this.permissao;
+        return idUsuario;
     }
 
     public void setIdUsuario(UUID idUsuario) {
         this.idUsuario = idUsuario;
     }
 
+    public String getNome() {
+        return nome;
+    }
+
     public void setNome(String nome) {
         this.nome = nome;
     }
 
-    public void seteMail(String email) {
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getTelefone() {
+        return telefone;
+    }
+
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
+    }
+
+    public boolean isPermissao() {
+        return permissao;
     }
 
     public void setPermissao(boolean permissao) {
