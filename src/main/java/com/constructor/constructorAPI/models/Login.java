@@ -10,22 +10,22 @@ public class Login implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
-    private UUID idUsuario;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private UUID idLogin;
 
     private String username;
     private String password;
 
     @OneToOne
-    @MapsId
     @JoinColumn(name = "idUsuario")
     private Usuario usuario;
 
-    public UUID getIdUsuario() {
-        return idUsuario;
+    public UUID getIdLogin() {
+        return idLogin;
     }
 
-    public void setIdUsuario(UUID idUsuario) {
-        this.idUsuario = idUsuario;
+    public void setIdLogin(UUID idLogin) {
+        this.idLogin = idLogin;
     }
 
     public String getUsername() {

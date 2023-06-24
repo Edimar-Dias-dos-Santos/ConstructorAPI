@@ -37,7 +37,7 @@ public class LoginController {
 
     @PostMapping
     public ResponseEntity<Login> saveLogin(@RequestBody @Valid Login login) {
-        login.setIdUsuario(UUID.randomUUID());
+        login.setIdLogin(UUID.randomUUID());
         return ResponseEntity.status(HttpStatus.CREATED).body(repLogin.save(login));
     }
 

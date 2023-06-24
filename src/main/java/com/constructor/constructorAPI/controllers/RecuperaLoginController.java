@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.UUID;
 
 @RestController
-@RequestMapping("api/RecuperaLogin")
+@RequestMapping("/api/RecuperaLogin")
 @CrossOrigin("*")
 public class RecuperaLoginController {
 

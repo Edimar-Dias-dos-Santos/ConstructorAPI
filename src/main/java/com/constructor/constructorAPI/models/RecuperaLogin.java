@@ -14,7 +14,7 @@ public class RecuperaLogin implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID idRecuperaLogin;
     private String cpf;
-    private LocalDate dataNascimento;
+    private String dataNascimento;
     private String ultimoNome;
 
     @ManyToOne
@@ -29,7 +29,7 @@ public class RecuperaLogin implements Serializable {
         return this.cpf;
     }
 
-    public LocalDate getDataNascimento() {
+    public String getDataNascimento() {
         return this.dataNascimento;
     }
 
@@ -45,7 +45,7 @@ public class RecuperaLogin implements Serializable {
         this.cpf = cpf;
     }
 
-    public void setDataNascimento(LocalDate dataNascimento) {
+    public void setDataNascimento(String dataNascimento) {
         this.dataNascimento = dataNascimento;
     }
 
