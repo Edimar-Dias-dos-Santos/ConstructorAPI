@@ -15,8 +15,8 @@ import java.util.Optional;
 import java.util.UUID;
 
 @RestController
-@RequestMapping("/CliFornecServico")
-@CrossOrigin(origins = "http://localhost:4200", maxAge = 3600)
+@RequestMapping("api/CliFornecServico")
+@CrossOrigin("*")
 public class CliFornecServicoController {
 
     @Autowired

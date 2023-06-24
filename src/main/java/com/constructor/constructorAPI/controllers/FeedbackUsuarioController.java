@@ -15,8 +15,8 @@ import java.util.Optional;
 import java.util.UUID;
 
 @RestController
-@RequestMapping("/FeedbackUsuario")
-@CrossOrigin(origins = "http://localhost:4200", maxAge = 3600)
+@RequestMapping("api/FeedbackUsuario")
+@CrossOrigin("*")
 public class FeedbackUsuarioController {
 
     @Autowired

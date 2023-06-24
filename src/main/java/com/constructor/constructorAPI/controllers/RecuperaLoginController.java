@@ -13,8 +13,8 @@ import java.util.List;
 import java.util.UUID;
 
 @RestController
-@RequestMapping("/RecuperaLogin")
-@CrossOrigin(origins = "http://localhost:4200", maxAge = 3600)
+@RequestMapping("api/RecuperaLogin")
+@CrossOrigin("*")
 public class RecuperaLoginController {
 
     @Autowired

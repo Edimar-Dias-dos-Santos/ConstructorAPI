@@ -15,8 +15,8 @@ import java.util.Optional;
 import java.util.UUID;
 
 @RestController
-@RequestMapping("/Servico")
-@CrossOrigin(origins = "http://localhost:4200", maxAge = 3600)
+@RequestMapping("api/Servico")
+@CrossOrigin("*")
 public class ServicoController {
 
     @Autowired
