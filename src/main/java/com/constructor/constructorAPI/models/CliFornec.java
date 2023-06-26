@@ -21,6 +21,7 @@ public class CliFornec implements Serializable {
     private int diasQueTrabalha;
     private String descricao;
 
+
     public UUID getIdCliFornec() {
         return this.idCliFornec;
     }
