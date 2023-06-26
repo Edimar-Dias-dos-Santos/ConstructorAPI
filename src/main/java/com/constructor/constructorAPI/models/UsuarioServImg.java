@@ -13,7 +13,7 @@ public class UsuarioServImg {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private UUID id;
+    private UUID idUsuarioServImg;
 
     @ManyToOne
     @JoinColumn(name = "idCliFornec")
@@ -22,11 +22,11 @@ public class UsuarioServImg {
     private String url;
 
     public UUID getId() {
-        return id;
+        return idUsuarioServImg;
     }
 
     public void setId(UUID id) {
-        this.id = id;
+        this.idUsuarioServImg = id;
     }
 
     public CliFornec getCliFornec() {
