@@ -1,13 +1,9 @@
 package com.constructor.constructorAPI.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-import java.util.UUID;
-import jakarta.persistence.GenerationType;
-
+import jakarta.persistence.*;
 import java.io.Serializable;
+import java.util.List;
+import java.util.UUID;
 
 @Entity
 @Table(name = "TB_USUARIO")
@@ -21,6 +17,9 @@ public class Usuario implements Serializable {
     private String email;
     private String telefone;
     private boolean permissao;
+
+    @OneToMany(mappedBy = "usuario")
+    private List<CliFornec> cliFornecs;
 
     public UUID getIdUsuario() {
         return idUsuario;
@@ -60,5 +59,13 @@ public class Usuario implements Serializable {
 
     public void setPermissao(boolean permissao) {
         this.permissao = permissao;
+    }
+
+    public List<CliFornec> getCliFornecs() {
+        return cliFornecs;
+    }
+
+    public void setCliFornecs(List<CliFornec> cliFornecs) {
+        this.cliFornecs = cliFornecs;
     }
 }

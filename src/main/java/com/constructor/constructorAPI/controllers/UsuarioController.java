@@ -26,7 +26,7 @@ public class UsuarioController {
     public ResponseEntity<Usuario> saveUser(@RequestBody @Valid UsuarioRecordDto usuarioRecordDto) {
         var user = new Usuario();
         BeanUtils.copyProperties(usuarioRecordDto, user);
-        user.setIdUsuario(UUID.randomUUID()); // Gera um novo UUID para o usuário
+        user.setIdUsuario(UUID.randomUUID());
         return ResponseEntity.status(HttpStatus.CREATED).body(repUsuario.save(user));
     }
 
