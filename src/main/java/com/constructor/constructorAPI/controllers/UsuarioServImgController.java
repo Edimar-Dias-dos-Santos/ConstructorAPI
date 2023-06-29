@@ -3,8 +3,11 @@ package com.constructor.constructorAPI.controllers;
 import com.constructor.constructorAPI.dtos.UsuarioServImgRecordDto;
 import com.constructor.constructorAPI.models.CliFornec;
 import com.constructor.constructorAPI.models.UsuarioServImg;
+import com.constructor.constructorAPI.repositories.RepCliFornec;
 import com.constructor.constructorAPI.repositories.RepUsuarioServImg;
 import jakarta.validation.Valid;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -22,22 +25,29 @@ import java.util.UUID;
 @RequestMapping("api/UsuarioServImg")
 @CrossOrigin("*")
 public class UsuarioServImgController {
+    private final Logger logger = LoggerFactory.getLogger(UsuarioServImgController.class);
 
     @Autowired
     private RepUsuarioServImg repUsuarioServImg;
+
+    @Autowired
+    private RepCliFornec prestadorRepository;
 
     @PostMapping("/{idCliFornec}/image")
     public ResponseEntity<UsuarioServImg> saveUsuarioServImg(
             @PathVariable UUID idCliFornec,
             @RequestParam("imageFile") MultipartFile imageFile) {
 
+        var prestador = prestadorRepository.findById(idCliFornec)
+                .orElse(null);
+
         var usuarioServImg = new UsuarioServImg();
-        usuarioServImg.setCliFornec(new CliFornec());
-        usuarioServImg.getCliFornec().setIdCliFornec(idCliFornec);
+        usuarioServImg.setCliFornec(prestador);
 
         try {
             usuarioServImg.saveImage(idCliFornec, imageFile);
         } catch (IOException e) {
+            logger.error(e.getMessage());
             // Trate a exceção de forma adequada para sua aplicação
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
         }
