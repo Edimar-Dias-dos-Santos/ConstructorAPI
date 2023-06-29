@@ -13,6 +13,8 @@ public class Login implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID idLogin;
 
+    private String codigoLogado;
+
     private String username;
     private String password;
 
@@ -50,5 +52,13 @@ public class Login implements Serializable {
 
     public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
+    }
+
+    public String getCodigoLogado() {
+        return this.codigoLogado;
+    }
+
+    public void setCodigoLogado(String codigoLogado) {
+        this.codigoLogado = codigoLogado;
     }
 }

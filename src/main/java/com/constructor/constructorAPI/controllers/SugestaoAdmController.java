@@ -16,7 +16,7 @@ import java.util.Optional;
 @RestController
 @RequestMapping("api/SugestaoAdm")
 @CrossOrigin("*")
-public class SugestaoAdmController {
+public class    SugestaoAdmController {
 
     @Autowired
     private SugestaoAdmRepository sugestaoAdmRepository;
