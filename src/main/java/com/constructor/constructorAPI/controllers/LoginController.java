@@ -30,9 +30,24 @@ public class LoginController {
         Optional<Login> optionalLogin = repLogin.findByUsernameAndPassword(username, password);
         if (optionalLogin.isPresent()) {
             Login login = optionalLogin.get();
+
+            login.getUsuario();
+
             return ResponseEntity.ok(login);
         } else {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
+        }
+    }
+
+    @GetMapping("/idUsuario")
+    public ResponseEntity<UUID> getIdUsuarioByUsernameAndPassword(@RequestParam String username, @RequestParam String password) {
+        Optional<Login> optionalLogin = repLogin.findByUsernameAndPassword(username, password);
+        if (optionalLogin.isPresent()) {
+            Login login = optionalLogin.get();
+            UUID idUsuario = login.getUsuario().getIdUsuario();
+            return ResponseEntity.ok(idUsuario);
+        } else {
+            return ResponseEntity.notFound().build();
         }
     }
 
