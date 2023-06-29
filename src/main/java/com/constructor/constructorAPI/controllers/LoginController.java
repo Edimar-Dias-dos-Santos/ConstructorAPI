@@ -24,12 +24,13 @@ public class LoginController {
 
     @PostMapping("/authenticate")
     public ResponseEntity<Login> authenticateUser(@RequestBody @Valid LoginRecordDto loginRecordDto) {
-        String username = loginRecordDto.username();
-        String password = loginRecordDto.password();
+        String username = loginRecordDto.getUsername();
+        String password = loginRecordDto.getPassword();
 
         Optional<Login> optionalLogin = repLogin.findByUsernameAndPassword(username, password);
         if (optionalLogin.isPresent()) {
-            return ResponseEntity.ok(optionalLogin.get());
+            Login login = optionalLogin.get();
+            return ResponseEntity.ok(login);
         } else {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
         }
