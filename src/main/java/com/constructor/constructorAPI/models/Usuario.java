@@ -1,6 +1,8 @@
 package com.constructor.constructorAPI.models;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotEmpty;
+
 import java.io.Serializable;
 import java.util.List;
 import java.util.UUID;
@@ -13,7 +15,9 @@ public class Usuario implements Serializable {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     private UUID idUsuario;
+    @NotEmpty(message = "O nome não pode ser nulo")
     private String nome;
+    @NotEmpty(message = "O email não pode ser nulo")
     private String email;
     private String telefone;
     private boolean permissao;

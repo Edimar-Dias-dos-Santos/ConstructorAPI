@@ -24,8 +24,8 @@ public class LoginController {
 
     @PostMapping("/authenticate")
     public ResponseEntity<Login> authenticateUser(@RequestBody @Valid LoginRecordDto loginRecordDto) {
-        String username = loginRecordDto.getUsername();
-        String password = loginRecordDto.getPassword();
+        String username = loginRecordDto.username();
+        String password = loginRecordDto.password();
 
         Optional<Login> optionalLogin = repLogin.findByUsernameAndPassword(username, password);
         if (optionalLogin.isPresent()) {
