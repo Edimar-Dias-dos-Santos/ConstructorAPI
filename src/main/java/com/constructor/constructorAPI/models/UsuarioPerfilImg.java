@@ -19,8 +19,7 @@ public class UsuarioPerfilImg implements Serializable {
     @GeneratedValue(strategy=GenerationType.AUTO)
     private UUID idUsuarioPerfilImg;
 
-    @OneToOne
-    private Usuario usuario;
+    private UUID idUsuario;
 
     private String url;
 
@@ -32,13 +31,6 @@ public class UsuarioPerfilImg implements Serializable {
         this.idUsuarioPerfilImg = idUsuarioPerfilImg;
     }
 
-    public Usuario getUsuario() {
-        return usuario;
-    }
-
-    public void setUsuario(Usuario usuario) {
-        this.usuario = usuario;
-    }
 
     public String getUrl() {
         return url;
@@ -46,5 +38,13 @@ public class UsuarioPerfilImg implements Serializable {
 
     public void setUrl(String url) {
         this.url = url;
+    }
+
+    public UUID getIdUsuario() {
+        return this.idUsuario;
+    }
+
+    public void setIdUsuario(UUID idUsuario) {
+         this.idUsuario = idUsuario;
     }
 }
