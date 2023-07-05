@@ -2,7 +2,9 @@ package com.constructor.constructorAPI.dtos;
 
 import jakarta.validation.constraints.NotBlank;
 
-public record LoginRecordDto(@NotBlank String username, @NotBlank String password) {
+import java.util.UUID;
+
+public record LoginRecordDto(@NotBlank String username,UUID getCodigoLogado, UUID idUsuario, @NotBlank String password) {
     public String getUsername() {
         return username;
     }
