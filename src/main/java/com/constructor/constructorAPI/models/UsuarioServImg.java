@@ -15,9 +15,8 @@ public class UsuarioServImg {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID idUsuarioServImg;
 
-    @ManyToOne
-    @JoinColumn(name = "idCliFornec")
-    private CliFornec cliFornec;
+    private UUID idCliFornec;
+
 
     private String url;
 
@@ -29,14 +28,6 @@ public class UsuarioServImg {
         this.idUsuarioServImg = id;
     }
 
-    public CliFornec getCliFornec() {
-        return cliFornec;
-    }
-
-    public void setCliFornec(CliFornec cliFornec) {
-        this.cliFornec = cliFornec;
-    }
-
     public String getUrl() {
         return url;
     }
@@ -45,8 +36,24 @@ public class UsuarioServImg {
         this.url = url;
     }
 
+    public UUID getIdUsuarioServImg() {
+        return this.idUsuarioServImg;
+    }
+
+    public UUID getIdCliFornec() {
+        return this.idCliFornec;
+    }
+
+    public void setIdUsuarioServImg(UUID idUsuarioServImg) {
+        this.idUsuarioServImg = idUsuarioServImg;
+    }
+
+    public void setIdCliFornec(UUID idCliFornec) {
+        this.idCliFornec = idCliFornec;
+    }
+
     public void saveImage(UUID idCliFornec, MultipartFile imageFile) throws IOException {
-        String directoryPath = "C:/diretorio/imagens/"; // Diretório onde a imagem será salva
+        String directoryPath = "C:/imagens"; // Diretório onde a imagem será salva
 
         if (!imageFile.isEmpty()) {
             String originalFileName = imageFile.getOriginalFilename();

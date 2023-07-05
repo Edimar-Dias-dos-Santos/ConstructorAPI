@@ -1,7 +1,6 @@
 package com.constructor.constructorAPI.controllers;
 
 import com.constructor.constructorAPI.dtos.UsuarioServImgRecordDto;
-import com.constructor.constructorAPI.models.CliFornec;
 import com.constructor.constructorAPI.models.UsuarioServImg;
 import com.constructor.constructorAPI.repositories.RepUsuarioServImg;
 import jakarta.validation.Valid;
@@ -12,7 +11,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.io.File;
 import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
@@ -32,8 +30,7 @@ public class UsuarioServImgController {
             @RequestParam("imageFile") MultipartFile imageFile) {
 
         var usuarioServImg = new UsuarioServImg();
-        usuarioServImg.setCliFornec(new CliFornec());
-        usuarioServImg.getCliFornec().setIdCliFornec(idCliFornec);
+        usuarioServImg.setIdCliFornec(idCliFornec);
 
         try {
             usuarioServImg.saveImage(idCliFornec, imageFile);
