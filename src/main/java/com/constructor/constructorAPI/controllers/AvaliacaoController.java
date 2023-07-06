@@ -39,10 +39,10 @@ public class AvaliacaoController {
     }
 
     @GetMapping("/usuario/{idUsuario}")
-    public ResponseEntity<Avaliacao> getAvaliacaoByUsuarioId(@PathVariable UUID idUsuario) {
-        Avaliacao avaliacao = avaliacaoRepository.findByIdUsuario(idUsuario);
-        if (avaliacao != null) {
-            return ResponseEntity.ok(avaliacao);
+    public ResponseEntity<List<Avaliacao>> getAvaliacaoByUsuarioId(@PathVariable UUID idUsuario) {
+        List<Avaliacao> avaliacoes = avaliacaoRepository.findByIdUsuario(idUsuario);
+        if (!avaliacoes.isEmpty()) {
+            return ResponseEntity.ok(avaliacoes);
         } else {
             return ResponseEntity.notFound().build();
         }
