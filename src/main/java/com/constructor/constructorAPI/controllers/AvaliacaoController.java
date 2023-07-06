@@ -38,6 +38,17 @@ public class AvaliacaoController {
         }
     }
 
+    @GetMapping("/usuario/{idUsuario}")
+    public ResponseEntity<Avaliacao> getAvaliacaoByUsuarioId(@PathVariable UUID idUsuario) {
+        Avaliacao avaliacao = avaliacaoRepository.findByIdUsuario(idUsuario);
+        if (avaliacao != null) {
+            return ResponseEntity.ok(avaliacao);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
+
     @PostMapping
     public ResponseEntity<Avaliacao> createAvaliacao(@Valid @RequestBody Avaliacao avaliacao) {
         Avaliacao createdAvaliacao = avaliacaoRepository.save(avaliacao);
