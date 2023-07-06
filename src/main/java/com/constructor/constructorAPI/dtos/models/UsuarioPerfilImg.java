@@ -1,4 +1,4 @@
-package com.constructor.constructorAPI.models;
+package com.constructor.constructorAPI.dtos.models;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

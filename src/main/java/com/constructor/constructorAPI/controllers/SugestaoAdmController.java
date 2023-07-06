@@ -1,7 +1,7 @@
 package com.constructor.constructorAPI.controllers;
 
 import com.constructor.constructorAPI.dtos.SugestaoAdmDto;
-import com.constructor.constructorAPI.models.SugestaoAdm;
+import com.constructor.constructorAPI.dtos.models.SugestaoAdm;
 import com.constructor.constructorAPI.repositories.SugestaoAdmRepository;
 import jakarta.validation.Valid;
 import org.springframework.beans.BeanUtils;

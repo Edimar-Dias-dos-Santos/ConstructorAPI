@@ -1,7 +1,7 @@
 package com.constructor.constructorAPI.controllers;
 
 import com.constructor.constructorAPI.dtos.UsuarioRecordDto;
-import com.constructor.constructorAPI.models.Usuario;
+import com.constructor.constructorAPI.dtos.models.Usuario;
 import com.constructor.constructorAPI.repositories.RepUsuario;
 import jakarta.validation.Valid;
 import org.springframework.beans.BeanUtils;

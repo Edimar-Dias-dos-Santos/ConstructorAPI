@@ -1,6 +1,6 @@
 package com.constructor.constructorAPI.controllers;
 import com.constructor.constructorAPI.dtos.RecuperaLoginRecordDto;
-import com.constructor.constructorAPI.models.RecuperaLogin;
+import com.constructor.constructorAPI.dtos.models.RecuperaLogin;
 import com.constructor.constructorAPI.repositories.RepRecuperaLogin;
 import jakarta.validation.Valid;
 import org.springframework.beans.BeanUtils;

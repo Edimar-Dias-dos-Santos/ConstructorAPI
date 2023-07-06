@@ -1,7 +1,7 @@
 package com.constructor.constructorAPI.controllers;
 
 import com.constructor.constructorAPI.dtos.CliFornecRecordDto;
-import com.constructor.constructorAPI.models.CliFornec;
+import com.constructor.constructorAPI.dtos.models.CliFornec;
 import com.constructor.constructorAPI.repositories.RepCliFornec;
 import jakarta.validation.Valid;
 import org.springframework.beans.BeanUtils;

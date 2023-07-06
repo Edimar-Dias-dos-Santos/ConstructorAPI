@@ -1,7 +1,7 @@
 package com.constructor.constructorAPI.controllers;
 
 import com.constructor.constructorAPI.dtos.ServicoRecordDto;
-import com.constructor.constructorAPI.models.Servico;
+import com.constructor.constructorAPI.dtos.models.Servico;
 import com.constructor.constructorAPI.repositories.RepServico;
 import jakarta.validation.Valid;
 import org.springframework.beans.BeanUtils;

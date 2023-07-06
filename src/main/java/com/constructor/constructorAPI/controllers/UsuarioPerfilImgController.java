@@ -1,7 +1,7 @@
 package com.constructor.constructorAPI.controllers;
 
 import com.constructor.constructorAPI.dtos.UsuarioPerfilImgRecordDto;
-import com.constructor.constructorAPI.models.UsuarioPerfilImg;
+import com.constructor.constructorAPI.dtos.models.UsuarioPerfilImg;
 import com.constructor.constructorAPI.repositories.RepUsuarioPerfilImg;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

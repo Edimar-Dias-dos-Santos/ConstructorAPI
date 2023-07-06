@@ -1,7 +1,7 @@
 package com.constructor.constructorAPI.controllers;
 
 import com.constructor.constructorAPI.dtos.FeedbackUsuarioRecordDto;
-import com.constructor.constructorAPI.models.FeedbackUsuario;
+import com.constructor.constructorAPI.dtos.models.FeedbackUsuario;
 import com.constructor.constructorAPI.repositories.RepFeedbackUsuario;
 import jakarta.validation.Valid;
 import org.springframework.beans.BeanUtils;

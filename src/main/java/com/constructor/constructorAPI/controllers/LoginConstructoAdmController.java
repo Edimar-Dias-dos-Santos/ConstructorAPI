@@ -1,7 +1,7 @@
 package com.constructor.constructorAPI.controllers;
 
 import com.constructor.constructorAPI.dtos.LoginConstructoAdmRecordDto;
-import com.constructor.constructorAPI.models.LoginConstructoAdm;
+import com.constructor.constructorAPI.dtos.models.LoginConstructoAdm;
 import com.constructor.constructorAPI.repositories.RepLoginConstructoAdm;
 import jakarta.validation.Valid;
 import org.springframework.beans.BeanUtils;

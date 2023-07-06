@@ -1,7 +1,7 @@
 package com.constructor.constructorAPI.controllers;
 
 import com.constructor.constructorAPI.dtos.UsuarioServImgRecordDto;
-import com.constructor.constructorAPI.models.UsuarioServImg;
+import com.constructor.constructorAPI.dtos.models.UsuarioServImg;
 import com.constructor.constructorAPI.repositories.RepUsuarioServImg;
 import jakarta.validation.Valid;
 import org.springframework.beans.BeanUtils;

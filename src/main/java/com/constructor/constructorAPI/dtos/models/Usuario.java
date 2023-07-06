@@ -1,4 +1,4 @@
-package com.constructor.constructorAPI.models;
+package com.constructor.constructorAPI.dtos.models;
 
 import jakarta.persistence.*;
 import java.io.Serializable;
@@ -16,6 +16,27 @@ public class Usuario implements Serializable {
     private String nome;
     private String email;
     private String telefone;
+
+    private String profissao;
+
+    private String urlPerfil;
+
+    public String getProfissao() {
+        return this.profissao;
+    }
+
+    public String getUrlPerfil() {
+        return this.urlPerfil;
+    }
+
+    public void setProfissao(String profissao) {
+        this.profissao = profissao;
+    }
+
+    public void setUrlPerfil(String urlPerfil) {
+        this.urlPerfil = urlPerfil;
+    }
+
     private boolean permissao;
 
     @OneToMany(mappedBy = "usuario")

@@ -1,6 +1,6 @@
 package com.constructor.constructorAPI.repositories;
 
-import com.constructor.constructorAPI.models.UsuarioPerfilImg;
+import com.constructor.constructorAPI.dtos.models.UsuarioPerfilImg;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
